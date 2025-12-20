@@ -179,10 +179,10 @@ const Footer: React.FC = memo(() => {
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="mailto:threadeddreams@femmora.com"
+                  href="mailto:santhiyalogesh02@gmail.com"
                   className="text-primary-foreground/80"
                 >
-                  threadeddreams@femmora.com
+                  santhiyalogesh02@gmail.com
                 </a>
               </li>
             </ul>
