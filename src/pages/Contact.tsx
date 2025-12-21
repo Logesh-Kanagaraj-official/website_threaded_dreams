@@ -177,7 +177,7 @@ const Contact: React.FC = memo(() => {
                                         <h3 className="font-semibold text-foreground mb-1">Address</h3>
                                         <p className="text-muted-foreground">
                                             Tirupur, Tamil Nadu<br />
-                                            641601
+                                            641607
                                         </p>
                                     </div>
                                 </div>

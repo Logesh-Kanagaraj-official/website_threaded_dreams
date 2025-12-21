@@ -167,7 +167,7 @@ const Footer: React.FC = memo(() => {
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <div className="text-primary-foreground/80">
                   <p>Tirupur, Tamil Nadu</p>
-                  <p>641601</p>
+                  <p>641607</p>
                 </div>
               </li>
               <li className="flex items-center space-x-3">
