@@ -17,6 +17,11 @@ import clipMallipoo from "/clips/mallipoo-clips.png";
 import clipDecorativeClaws from "/clips/decorative-claw-clips.png";
 import clipFlowerHairTies from "/clips/flower-hair-ties.png";
 import clipPeacockPins from "/clips/peacock-hair-clips.png";
+import clipPurplePinkFloral from "/clips/purple-pink-floral-clips.png";
+import clipFloralPendant from "/clips/floral-pendant-clip.png";
+import clipBlackGoldFlower from "/clips/black-gold-flower-clip.png";
+import clipBlackTurquoiseLeaf from "/clips/black-turquoise-leaf-clip.png";
+import clipBrownWhiteGold from "/clips/brown-white-gold-clip.png";
 
 const Clips: React.FC = memo(() => {
   const clipProducts = [
@@ -46,7 +51,42 @@ const Clips: React.FC = memo(() => {
       title: "Decorative Claw Clips Set",
       description:
         "Beautiful decorative claw clips in pink and blue with intricate gold leaf patterns and gemstone embellishments. Perfect for everyday elegance.",
+      isNewArrival: false,
+    },
+    {
+      image: clipPurplePinkFloral,
+      title: "Elegant Floral Hair Clips Duo",
+      description:
+        "Stunning pair of floral hair clips featuring purple and pink gemstone flowers with gold accents. Perfect for adding elegance to any hairstyle.",
       isNewArrival: true,
+    },
+    {
+      image: clipFloralPendant,
+      title: "Floral Pendant Hair Clip",
+      description:
+        "Ornate floral pendant clip with vibrant red, orange, and dark gemstones arranged in a beautiful flower pattern with gold setting and green accent stones.",
+      isNewArrival: false,
+    },
+    {
+      image: clipBlackGoldFlower,
+      title: "Black & Gold Heart Flower Clip",
+      description:
+        "Elegant black curved hair clip adorned with gold-toned heart-shaped flowers and brown gemstone accents. A sophisticated choice for any occasion.",
+      isNewArrival: false,
+    },
+    {
+      image: clipBlackTurquoiseLeaf,
+      title: "Turquoise Leaf Banana Clip",
+      description:
+        "Sleek black banana clip featuring decorative turquoise and green gemstones arranged in an elegant leaf pattern. Stylish and functional.",
+      isNewArrival: false,
+    },
+    {
+      image: clipBrownWhiteGold,
+      title: "Amber Gemstone Banana Clip",
+      description:
+        "Transparent brown banana clip beautifully decorated with white marquise stones and gold square and round gemstones. Classic elegance meets modern style.",
+      isNewArrival: false,
     },
     {
       image: clipFlowerPair,
