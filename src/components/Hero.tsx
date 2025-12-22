@@ -4,15 +4,13 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import NewArrivalModal from "@/components/NewArrivalModal";
 
-
 // Assets
 import heroRing from "@/assets/hero-ring.webp";
 import pearlNecklace from "@/assets/hair-clip-enhanced.jpg";
 import threadBangles from "@/assets/thread-bangles-enhanced.jpg";
 import sapphireEarrings from "@/assets/hair-clip-enhanced.jpg";
 import rubyPendant from "@/assets/accessories-combined.jpg";
-
-
+import newArrivalsHero from "@/assets/new-arrivals-hero.png";
 
 // Team member images
 import teamFounder from "@/assets/team-founder.jpg";
@@ -36,8 +34,12 @@ const Hero: React.FC = memo(() => {
   const [isNewArrivalModalOpen, setIsNewArrivalModalOpen] = useState(false);
 
   const categories = [
-
-    { name: "NEW ARRIVAL", image: rubyPendant, route: "/new-arrival", isModal: true },
+    {
+      name: "NEW ARRIVALS",
+      image: newArrivalsHero,
+      route: "/new-arrival",
+      isModal: true,
+    },
     { name: "BANGLES", image: threadBangles, route: "/bangles" },
     { name: "CLIPS", image: sapphireEarrings, route: "/clips" },
     { name: "ACCESSORIES", image: rubyPendant, route: "/accessories" },
@@ -64,7 +66,6 @@ const Hero: React.FC = memo(() => {
     <section className="relative min-h-screen bg-gradient-to-b from-background to-silk overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[70vh]">
-
           {/* Left: Title & CTA */}
           <div
             ref={titleRef}
@@ -109,6 +110,7 @@ const Hero: React.FC = memo(() => {
                           src={product.image}
                           alt={product.name}
                           className="w-full h-full object-cover group-hover:scale-110 elegant-transition"
+                          fetchPriority={idx === 0 ? "high" : "auto"}
                         />
                       </div>
                       <div className="text-center">
@@ -141,7 +143,9 @@ const Hero: React.FC = memo(() => {
                   <button
                     key={cat.name}
                     onClick={() => setIsNewArrivalModalOpen(true)}
-                    className={`group elegant-transition stagger-${idx + 1} w-full`}
+                    className={`group elegant-transition stagger-${
+                      idx + 1
+                    } w-full`}
                   >
                     <div className="luxury-card p-3 sm:p-4 text-center hover:scale-105 elegant-transition cursor-pointer relative">
                       <div className="aspect-square overflow-hidden rounded-lg mb-2 sm:mb-3 relative">
@@ -149,7 +153,7 @@ const Hero: React.FC = memo(() => {
                         <div className="absolute top-2 left-2 w-12 h-12 sm:w-14 sm:h-14 overflow-hidden rounded-full shadow-lg z-20">
                           <img
                             src={newArrivalBanner}
-                            alt="New Arrival"
+                            alt="New Arrivals"
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -213,16 +217,21 @@ const Hero: React.FC = memo(() => {
             <div className="luxury-card p-6 sm:p-8 text-center">
               <div className="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-accent text-xl">★</span>
+                  <span key={i} className="text-accent text-xl">
+                    ★
+                  </span>
                 ))}
               </div>
               <p className="text-muted-foreground mb-6 italic">
-                "Absolutely beautiful bangles! The craftsmanship is amazing and the colors are so vibrant.
-                I ordered a custom set for festive occasions and they turned out perfect. Highly recommend!"
+                "Absolutely beautiful bangles! The craftsmanship is amazing and
+                the colors are so vibrant. I ordered a custom set for festive
+                occasions and they turned out perfect. Highly recommend!"
               </p>
               <div className="border-t border-border pt-4">
                 <h4 className="font-semibold text-primary">Venisha</h4>
-                <p className="text-sm text-muted-foreground">Festive Occasions</p>
+                <p className="text-sm text-muted-foreground">
+                  Festive Occasions
+                </p>
               </div>
             </div>
 
@@ -230,16 +239,22 @@ const Hero: React.FC = memo(() => {
             <div className="luxury-card p-6 sm:p-8 text-center bg-gradient-to-br from-accent/5 to-primary/5">
               <div className="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-accent text-xl">★</span>
+                  <span key={i} className="text-accent text-xl">
+                    ★
+                  </span>
                 ))}
               </div>
               <p className="text-muted-foreground mb-6 italic">
-                "The attention to detail is incredible! Each piece is unique and handmade with love.
-                I've ordered multiple times for gifts and everyone loves them. Great quality!"
+                "The attention to detail is incredible! Each piece is unique and
+                handmade with love. I've ordered multiple times for gifts and
+                everyone loves them. Great quality!"
               </p>
               <div className="border-t border-border pt-4">
                 <h4 className="font-semibold text-primary"> Gayathri</h4>
-                <p className="text-sm text-muted-foreground"> Regular Customer</p>
+                <p className="text-sm text-muted-foreground">
+                  {" "}
+                  Regular Customer
+                </p>
               </div>
             </div>
 
@@ -247,20 +262,26 @@ const Hero: React.FC = memo(() => {
             <div className="luxury-card p-6 sm:p-8 text-center">
               <div className="flex justify-center mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-accent text-xl">★</span>
+                  <span key={i} className="text-accent text-xl">
+                    ★
+                  </span>
                 ))}
               </div>
               <p className="text-muted-foreground mb-6 italic">
-                "Love the customization options! I was able to choose my favorite colors and the result
-                exceeded my expectations. The clips are so elegant and comfortable to wear all day."
+                "Love the customization options! I was able to choose my
+                favorite colors and the result exceeded my expectations. The
+                clips are so elegant and comfortable to wear all day."
               </p>
               <div className="border-t border-border pt-4">
-                <h4 className="font-semibold text-primary">Raichal Livingston</h4>
-                <p className="text-sm text-muted-foreground">Designer Clips Fan</p>
+                <h4 className="font-semibold text-primary">
+                  Raichal Livingston
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Designer Clips Fan
+                </p>
               </div>
             </div>
           </div>
-
 
           <div className="text-center mt-8">
             <Link
@@ -290,6 +311,9 @@ const Hero: React.FC = memo(() => {
                   src={teamFounder}
                   alt="Founder"
                   className="w-full h-full object-cover"
+                  width="240"
+                  height="240"
+                  loading="lazy"
                 />
               </div>
               <h3 className="font-serif text-2xl font-bold text-primary mb-2">
@@ -299,7 +323,10 @@ const Hero: React.FC = memo(() => {
                 Founder & CEO
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                The passionate artisan and creative soul behind every handcrafted piece, dedicated to creating unique silk thread jewelry that celebrates individuality, elegance, and tradition with meticulous attention to detail.
+                The passionate artisan and creative soul behind every
+                handcrafted piece, dedicated to creating unique silk thread
+                jewelry that celebrates individuality, elegance, and tradition
+                with meticulous attention to detail.
               </p>
               <a
                 href="https://www.linkedin.com/in/santhiyachandru/"
@@ -320,6 +347,9 @@ const Hero: React.FC = memo(() => {
                   src={teamIT}
                   alt="IT Team and Delivery"
                   className="w-full h-full object-cover"
+                  width="240"
+                  height="240"
+                  loading="lazy"
                 />
               </div>
               <h3 className="font-serif text-2xl font-bold text-primary mb-2">
@@ -329,7 +359,9 @@ const Hero: React.FC = memo(() => {
                 Co-Founder & Operations
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Handling all operational aspects including delivery logistics, digital marketing and promotions, and technical infrastructure - ensuring smooth business operations.
+                Handling all operational aspects including delivery logistics,
+                digital marketing and promotions, and technical infrastructure -
+                ensuring smooth business operations.
               </p>
               <a
                 href="https://www.linkedin.com/in/logeshkanagaraj/"
@@ -351,25 +383,36 @@ const Hero: React.FC = memo(() => {
             Follow us on Instagram
           </h2>
 
-          <div className="flex gap-4 px-6 sm:px-8 overflow-x-auto no-scrollbar py-8" style={{ paddingLeft: '2rem', paddingRight: '2rem' }}>
-            {[insta2, insta3, insta4, insta5, insta6, insta7, insta8, insta9].map(
-              (img, i) => (
-                <div
-                  key={i}
-                  className="instagram-book-item min-w-[140px] sm:min-w-[180px] md:min-w-[200px] rounded-xl overflow-hidden shadow-md"
-                  style={{
-                    transformStyle: 'preserve-3d',
-                    perspective: '1000px'
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt={`Instagram post ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )
-            )}
+          <div
+            className="flex gap-4 px-6 sm:px-8 overflow-x-auto no-scrollbar py-8"
+            style={{ paddingLeft: "2rem", paddingRight: "2rem" }}
+          >
+            {[
+              insta2,
+              insta3,
+              insta4,
+              insta5,
+              insta6,
+              insta7,
+              insta8,
+              insta9,
+            ].map((img, i) => (
+              <div
+                key={i}
+                className="instagram-book-item min-w-[140px] sm:min-w-[180px] md:min-w-[200px] rounded-xl overflow-hidden shadow-md"
+                style={{
+                  transformStyle: "preserve-3d",
+                  perspective: "1000px",
+                }}
+              >
+                <img
+                  src={img}
+                  alt={`Instagram post ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-10">
@@ -386,8 +429,6 @@ const Hero: React.FC = memo(() => {
             </a>
           </div>
         </div>
-
-
       </div>
     </section>
   );

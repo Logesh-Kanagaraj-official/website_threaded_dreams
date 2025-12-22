@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import LogoLoader from "@/components/LogoLoader";
+import ScrollToTop from "@/components/ScrollToTop";
+import BackToTop from "@/components/BackToTop";
 
 // Lazily load pages to improve performance
 const Home = lazy(() => import("./pages/Home"));
@@ -38,6 +40,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         {/* Suspense fallback for lazy-loaded routes */}
         <Suspense fallback={<LogoLoader />}>
@@ -51,6 +54,7 @@ const App = () => (
           </Routes>
         </Suspense>
         <Footer />
+        <BackToTop />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -1,0 +1,6 @@
+# Robots.txt for Threaded Dreams
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://threadeddreams.netlify.app/sitemap.xml
