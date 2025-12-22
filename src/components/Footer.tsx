@@ -6,10 +6,7 @@
 
 import React, { memo } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
-import {
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 /** Navigation link type */
 interface NavLink {
@@ -69,7 +66,6 @@ const Footer: React.FC = memo(() => {
     >
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          
           {/* ---------- Brand Section (Updated with Logo) ---------- */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -79,17 +75,14 @@ const Footer: React.FC = memo(() => {
                 className="h-10 w-10 object-contain"
               />
 
-              <h3
-                id="footer-heading"
-                className="font-serif text-2xl font-bold"
-              >
+              <h3 id="footer-heading" className="font-serif text-2xl font-bold">
                 Threaded Dreams
               </h3>
             </div>
 
             <p className="text-primary-foreground/80 leading-relaxed mb-6">
-              Handcrafted silk thread bangles and accessories. As unique as you ✨
-              Each piece is made with love and care by Femmora.
+              Handcrafted silk thread bangles and accessories. As unique as you
+              ✨ Each piece is made with love and care by Femmora.
             </p>
 
             {/* Social Media */}
@@ -172,8 +165,11 @@ const Footer: React.FC = memo(() => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                <a href="tel:+919876543210" className="text-primary-foreground/80">
-                  +91 98765 43210
+                <a
+                  href="tel:+918838507329"
+                  className="text-primary-foreground/80"
+                >
+                  +91 88385 07329
                 </a>
               </li>
               <li className="flex items-center space-x-3">
