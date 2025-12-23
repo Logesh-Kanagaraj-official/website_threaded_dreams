@@ -2,7 +2,10 @@
 
 A modern, elegant e-commerce website showcasing handcrafted silk thread bangles and accessories. Built with React, TypeScript, and Tailwind CSS, featuring a luxurious user experience with smooth animations and responsive design.
 
+🔗 **Live Site**: [https://threadeddreams.netlify.app/](https://threadeddreams.netlify.app/)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)
 ![React](https://img.shields.io/badge/React-18.3.1-61dafb.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-3178c6.svg)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.18-38bdf8.svg)
@@ -117,79 +120,9 @@ website_threaded_dreams/
 └── eslint.config.js             # ESLint rules
 ```
 
-## 🛠️ Getting Started
-
-### Prerequisites
-
-- **Node.js** (v18 or higher recommended)
-- **npm** or **bun** package manager
-
-### Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/yourusername/website_threaded_dreams.git
-   cd website_threaded_dreams
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   # or
-   bun install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-   The app will be available at `http://localhost:8080`
-
-## 📜 Available Scripts
-
-### Development
-
-```bash
-npm run dev
-```
-
-Starts the Vite development server with hot module replacement (HMR).
-
-### Build
-
-```bash
-npm run build
-```
-
-Creates an optimized production build in the `dist/` directory.
-
-```bash
-npm run build:dev
-```
-
-Creates a development build (useful for debugging production issues).
-
-### Preview
-
-```bash
-npm run preview
-```
-
-Preview the production build locally before deployment.
-
-### Lint
-
-```bash
-npm run lint
-```
-
-Run ESLint to check code quality and enforce coding standards.
-
 ## 🎨 Customization
 
-### Color Scheme
+### Colour Scheme
 
 The website uses a custom color palette defined in `tailwind.config.ts`:
 
@@ -211,76 +144,6 @@ Products are defined in their respective page files:
 - **Clips**: `src/pages/Clips.tsx`
 - **Accessories**: `src/pages/Accessories.tsx`
 
-Product format:
-
-```typescript
-{
-  title: "Product Name",
-  image: "/path/to/image.jpg",
-  description: "Product description",
-  isNewArrival: true // Optional: marks as "NEW"
-}
-```
-
-## 🌐 Deployment
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Deploy to Netlify
-
-1. Push your code to GitHub
-2. Connect your repository to Netlify
-3. Configure build settings:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-4. Deploy!
-
-The `public/_redirects` file handles client-side routing for SPAs.
-
-### Deploy to Vercel
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-## 🔧 Configuration
-
-### Path Aliases
-
-TypeScript path aliases are configured in `tsconfig.json`:
-
-```json
-{
-  "paths": {
-    "@/*": ["./src/*"]
-  }
-}
-```
-
-Use `@/` to import from the `src` directory:
-
-```typescript
-import Header from "@/components/Header";
-```
-
-### Vite Configuration
-
-- React plugin with SWC for fast compilation
-- Path resolution for `@/` aliases
-- Development server runs on port 8080
-
-### Tailwind Configuration
-
-- Custom color palette
-- Extended animations
-- Typography plugin for rich text
-- Optimized for production with PurgeCSS
-
 ## 📸 Screenshots
 
 ### Homepage
@@ -293,16 +156,6 @@ import Header from "@/components/Header";
 - Clips & Accessories
 - Designer Sets
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/AmazingFeature`
-3. Commit your changes: `git commit -m 'Add some AmazingFeature'`
-4. Push to the branch: `git push origin feature/AmazingFeature`
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -311,16 +164,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Logesh Kanagaraj**
 
-- Website: [Techwithloki Hub](https://techwithloki.com)
+- Hub: [Techwithloki Hub](https://logeshkanagarajcard.netlify.app/)
 - Instagram: [@threaded_dreamsby_femmora](https://www.instagram.com/threaded_dreamsby_femmora/)
-- LinkedIn: [Santhiya Chandru](https://www.linkedin.com/in/santhiyachandru/)
+- LinkedIn: [Logesh Kanagaraj](https://www.linkedin.com/in/logeshkanagaraj/)
 
 ## 🙏 Acknowledgments
 
 - Product photography by Femmora
 - Icons by [Lucide](https://lucide.dev/)
 - UI components inspired by [Radix UI](https://www.radix-ui.com/)
-- Design inspiration from modern luxury jewelry brands
+- Design inspiration from modern luxury jewellery brands
 
 ---
 

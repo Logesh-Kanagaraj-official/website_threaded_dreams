@@ -86,8 +86,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
-- **1.0.0** - Initial release with full e-commerce showcase functionality
+- **1.0.0** - Initial release with Product showcase
 
 ---
 
-**Note**: This changelog will be updated with each significant release. For detailed commit history, see the [GitHub repository](https://github.com/yourusername/website_threaded_dreams).
+**Note**: This changelog will be updated with each significant release. For detailed commit history, see the [GitHub repository](https://github.com/Logesh-Kanagaraj-official/website_threaded_dreams).

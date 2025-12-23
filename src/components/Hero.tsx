@@ -317,7 +317,7 @@ const Hero: React.FC = memo(() => {
                 />
               </div>
               <h3 className="font-serif text-2xl font-bold text-primary mb-2">
-                Santhiya
+                Santhiya Chandru
               </h3>
               <p className="text-accent font-medium text-lg mb-4">
                 Founder & CEO
@@ -353,7 +353,7 @@ const Hero: React.FC = memo(() => {
                 />
               </div>
               <h3 className="font-serif text-2xl font-bold text-primary mb-2">
-                Logesh
+                Logesh Kanagaraj
               </h3>
               <p className="text-accent font-medium text-lg mb-4">
                 Co-Founder & Operations
