@@ -191,6 +191,12 @@ const Footer: React.FC = memo(() => {
             <p className="text-primary-foreground/60 text-sm">
               © {currentYear} Threaded Dreams by Femmora. All rights reserved.
             </p>
+
+            {/* Show in bottom bar on desktop only */}
+            <p className="hidden md:block text-primary-foreground/60 text-sm">
+              Made with ❤️ at Techwithloki Hub by Logesh Kanagaraj.
+            </p>
+
             <nav aria-label="Legal">
               <ul className="flex space-x-6 text-sm">
                 <li>
@@ -220,6 +226,13 @@ const Footer: React.FC = memo(() => {
               </ul>
             </nav>
           </div>
+        </div>
+
+        {/* ---------- Crafted By (Mobile Only) ---------- */}
+        <div className="block md:hidden text-center mt-6 pt-4 border-t border-primary-foreground/10">
+          <p className="text-primary-foreground/60 text-sm">
+            Made with ❤️ at Techwithloki Hub by Logesh Kanagaraj.
+          </p>
         </div>
       </div>
     </footer>
