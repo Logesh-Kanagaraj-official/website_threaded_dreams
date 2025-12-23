@@ -1,5 +1,3 @@
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Header from "@/components/Header";
@@ -17,47 +15,31 @@ const Accessories = lazy(() => import("./pages/Accessories"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Legal = lazy(() => import("./pages/Legal"));
 
-/** React Query client with recommended defaults */
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: 1,
-      refetchOnWindowFocus: false,
-      staleTime: 1000 * 60, // 1 minute
-    },
-  },
-});
-
 /**
  * App
  * Root application component.
- * - Provides global query caching
  * - Handles routing
- * - Includes global tooltips and toast notifications
+ * - Includes lazy loading for optimal performance
  */
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Header />
-        {/* Suspense fallback for lazy-loaded routes */}
-        <Suspense fallback={<LogoLoader />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/bangles" element={<Bangles />} />
-            <Route path="/clips" element={<Clips />} />
-            <Route path="/accessories" element={<Accessories />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/legal" element={<Legal />} />
-          </Routes>
-        </Suspense>
-        <Footer />
-        <BackToTop />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <BrowserRouter>
+    <ScrollToTop />
+    <Header />
+    {/* Suspense fallback for lazy-loaded routes */}
+    <Suspense fallback={<LogoLoader />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bangles" element={<Bangles />} />
+        <Route path="/clips" element={<Clips />} />
+        <Route path="/accessories" element={<Accessories />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/legal" element={<Legal />} />
+      </Routes>
+    </Suspense>
+    <Footer />
+    <BackToTop />
+  </BrowserRouter>
 );
 
 export default App;
