@@ -194,11 +194,6 @@ const Hero: React.FC = memo(() => {
                       <h3 className="font-serif text-xs sm:text-sm font-semibold text-accent tracking-wider">
                         {cat.name}
                       </h3>
-                      {cat.subtitle && (
-                        <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
-                          {cat.subtitle}
-                        </p>
-                      )}
                     </div>
                   </button>
                 );
