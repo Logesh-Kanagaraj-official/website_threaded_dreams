@@ -22,6 +22,9 @@ import clipFloralPendant from "/clips/floral-pendant-clip.png";
 import clipBlackGoldFlower from "/clips/black-gold-flower-clip.png";
 import clipBlackTurquoiseLeaf from "/clips/black-turquoise-leaf-clip.png";
 import clipBrownWhiteGold from "/clips/brown-white-gold-clip.png";
+import clipGoldFloralHairpins from "/clips/gold-floral-hairpins.jpg";
+import clipGreenFloralEarrings from "/clips/green-floral-earrings.jpg";
+import clipFloralElasticTies from "/clips/floral-elastic-hair-ties.jpg";
 
 const Clips: React.FC = memo(() => {
   const clipProducts = [
@@ -44,6 +47,27 @@ const Clips: React.FC = memo(() => {
       title: "Decorative Flower Hair Ties",
       description:
         "Collection of six elegant hair ties with colorful enamel flower embellishments. Features orange, purple, pink, and multicolor designs with gold metallic frames. Perfect for everyday styling.",
+      isNewArrival: true,
+    },
+    {
+      image: clipGoldFloralHairpins,
+      title: "Gold Floral Chain Hair Pins",
+      description:
+        "Exquisite gold hair pins featuring intricate flower designs with black and emerald green enamel petals, connected by delicate gold chains with pearl dangles. Perfect for elegant updos and traditional hairstyles.",
+      isNewArrival: true,
+    },
+    {
+      image: clipGreenFloralEarrings,
+      title: "Green Floral Stud Earrings",
+      description:
+        "Beautiful gold floral stud earrings with intricate petal designs in emerald green and black enamel. Elegant and versatile for both traditional and contemporary looks.",
+      isNewArrival: true,
+    },
+    {
+      image: clipFloralElasticTies,
+      title: "Floral Elastic Hair Ties Set",
+      description:
+        "Set of four decorative elastic hair ties with metallic floral embellishments in pink coral, gold with pearls, blue multicolor, and pink chrysanthemum designs. Functional and fashionable for daily wear.",
       isNewArrival: true,
     },
     {

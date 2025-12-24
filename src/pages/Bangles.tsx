@@ -24,6 +24,8 @@ import bangleGreenPeacock from "/bangles/green-peacock-bangles.png";
 import banglePinkLeaf from "/bangles/pink-leaf-bangles.png";
 import bangleGreenLeaf from "/bangles/green-leaf-bangles.png";
 import bangleColorfulEnamel from "/bangles/colorful-enamel-bangles.png";
+import bangleCreamPeacock from "/bangles/cream-peacock-bangles.jpg";
+import bangleBluePeacock from "/bangles/blue-peacock-bangles.jpg";
 import setGreenJewelry from "/sets/green-jewelry-set.png";
 import setPinkJewelry from "/sets/pink-jewelry-set.png";
 
@@ -69,6 +71,20 @@ const Bangles: React.FC = memo(() => {
       title: "Pink Lotus Jewelry Set",
       description:
         "Stunning pink-magenta jewelry set with silk thread bangles, pearl necklace with lotus pendant, and matching lotus earrings. A complete ensemble for special celebrations.",
+      isNewArrival: true,
+    },
+    {
+      image: bangleCreamPeacock,
+      title: "Cream Peacock Silk Thread Bangles",
+      description:
+        "Elegant cream-ivory silk thread bangles adorned with intricate gold peacock motifs, white moonstone petal designs, black and emerald green enamel accents, and decorative gold beads. A sophisticated blend of traditional artistry and modern elegance.",
+      isNewArrival: true,
+    },
+    {
+      image: bangleBluePeacock,
+      title: "Royal Blue Peacock Silk Thread Bangles",
+      description:
+        "Magnificent royal blue silk thread bangles featuring intricate gold peacock motifs, white moonstone leaf designs, and ornate colorful gemstone embellishments. Perfect for making a bold statement at traditional celebrations.",
       isNewArrival: true,
     },
 

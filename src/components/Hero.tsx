@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import NewArrivalModal from "@/components/NewArrivalModal";
+import ComingSoonModal from "@/components/ComingSoonModal";
 
 // Assets
 import heroRing from "@/assets/hero-ring.webp";
@@ -11,6 +12,7 @@ import threadBangles from "@/assets/thread-bangles-enhanced.jpg";
 import sapphireEarrings from "@/assets/hair-clip-enhanced.jpg";
 import rubyPendant from "@/assets/accessories-combined.jpg";
 import newArrivalsHero from "@/assets/new-arrivals-hero.png";
+import invisibleChainsHero from "/necklaces/invisible-chains-coming-soon.jpg";
 
 // Team member images
 import teamFounder from "@/assets/team-founder.jpg";
@@ -32,6 +34,7 @@ const Hero: React.FC = memo(() => {
   const productRef = useScrollAnimation();
   const categoriesRef = useScrollAnimation();
   const [isNewArrivalModalOpen, setIsNewArrivalModalOpen] = useState(false);
+  const [isComingSoonModalOpen, setIsComingSoonModalOpen] = useState(false);
 
   const categories = [
     {
@@ -39,10 +42,18 @@ const Hero: React.FC = memo(() => {
       image: newArrivalsHero,
       route: "/new-arrival",
       isModal: true,
+      modalType: "newArrival",
     },
     { name: "BANGLES", image: threadBangles, route: "/bangles" },
     { name: "CLIPS", image: sapphireEarrings, route: "/clips" },
     { name: "ACCESSORIES", image: rubyPendant, route: "/accessories" },
+    {
+      name: "LAUNCHING SOON",
+      image: invisibleChainsHero,
+      route: "/coming-soon",
+      isModal: true,
+      modalType: "comingSoon",
+    },
   ];
 
   const featuredProducts = [
@@ -134,38 +145,60 @@ const Hero: React.FC = memo(() => {
           ref={categoriesRef}
           className="scroll-animate stagger-3 mt-14 sm:mt-20"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
             {categories.map((cat, idx) => {
               const isModal = cat.isModal || false;
+              const modalType = cat.modalType || "newArrival";
 
               if (isModal) {
+                const handleClick = () => {
+                  if (modalType === "comingSoon") {
+                    setIsComingSoonModalOpen(true);
+                  } else {
+                    setIsNewArrivalModalOpen(true);
+                  }
+                };
+
                 return (
                   <button
                     key={cat.name}
-                    onClick={() => setIsNewArrivalModalOpen(true)}
+                    onClick={handleClick}
                     className={`group elegant-transition stagger-${
                       idx + 1
                     } w-full`}
                   >
                     <div className="luxury-card p-3 sm:p-4 text-center hover:scale-105 elegant-transition cursor-pointer relative">
-                      <div className="aspect-square overflow-hidden rounded-lg mb-2 sm:mb-3 relative">
-                        {/* Small Image Badge in Top-Left Corner */}
-                        <div className="absolute top-2 left-2 w-12 h-12 sm:w-14 sm:h-14 overflow-hidden rounded-full shadow-lg z-20">
-                          <img
-                            src={newArrivalBanner}
-                            alt="New Arrivals"
-                            className="w-full h-full object-cover"
-                          />
+                      {modalType === "comingSoon" && (
+                        <div className="absolute top-1 right-1 z-20">
+                          <span className="inline-block px-2 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] sm:text-xs font-bold rounded-full shadow-lg">
+                            SOON
+                          </span>
                         </div>
+                      )}
+                      <div className="aspect-square overflow-hidden rounded-lg mb-2 sm:mb-3 relative">
+                        {modalType === "newArrival" && (
+                          <div className="absolute top-2 left-2 w-12 h-12 sm:w-14 sm:h-14 overflow-hidden rounded-full shadow-lg z-20">
+                            <img
+                              src={newArrivalBanner}
+                              alt="New Arrivals"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        )}
                         <img
                           src={cat.image}
                           alt={`${cat.name} category`}
-                          className="w-full h-full object-contain group-hover:scale-110 elegant-transition"
+                          className="w-full h-full object-cover group-hover:scale-110 elegant-transition"
                         />
                       </div>
                       <h3 className="font-serif text-xs sm:text-sm font-semibold text-accent tracking-wider">
                         {cat.name}
                       </h3>
+                      {cat.subtitle && (
+                        <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
+                          {cat.subtitle}
+                        </p>
+                      )}
                     </div>
                   </button>
                 );
@@ -199,6 +232,12 @@ const Hero: React.FC = memo(() => {
         <NewArrivalModal
           isOpen={isNewArrivalModalOpen}
           onClose={() => setIsNewArrivalModalOpen(false)}
+        />
+
+        {/* Coming Soon Modal */}
+        <ComingSoonModal
+          isOpen={isComingSoonModalOpen}
+          onClose={() => setIsComingSoonModalOpen(false)}
         />
 
         {/* Testimonials */}
