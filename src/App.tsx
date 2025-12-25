@@ -13,6 +13,7 @@ const Bangles = lazy(() => import("./pages/Bangles"));
 const Clips = lazy(() => import("./pages/Clips"));
 const Accessories = lazy(() => import("./pages/Accessories"));
 const Contact = lazy(() => import("./pages/Contact"));
+const NotifyMe = lazy(() => import("./pages/NotifyMe"));
 const Legal = lazy(() => import("./pages/Legal"));
 
 /**
@@ -34,6 +35,7 @@ const App = () => (
         <Route path="/clips" element={<Clips />} />
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/notify-me" element={<NotifyMe />} />
         <Route path="/legal" element={<Legal />} />
       </Routes>
     </Suspense>

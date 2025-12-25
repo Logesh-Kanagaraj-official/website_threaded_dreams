@@ -5,6 +5,7 @@ import React, { memo, Suspense } from "react";
 const Hero = React.lazy(() => import("@/components/Hero"));
 const About = React.lazy(() => import("@/components/About"));
 const Craftsmanship = React.lazy(() => import("@/components/Craftsmanship"));
+const Newsletter = React.lazy(() => import("@/components/Newsletter"));
 
 /**
  * Home
@@ -31,6 +32,11 @@ const Home: React.FC = memo(() => {
         {/* About Section */}
         <section aria-labelledby="about-heading">
           <About />
+        </section>
+
+        {/* Newsletter Section */}
+        <section aria-label="Newsletter Signup">
+          <Newsletter />
         </section>
       </Suspense>
     </main>
