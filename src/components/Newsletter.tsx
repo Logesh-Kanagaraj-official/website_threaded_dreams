@@ -117,7 +117,7 @@ const Newsletter: React.FC = memo(() => {
                 {error && <p className="text-sm text-red-500 mt-3">{error}</p>}
                 <p className="text-xs text-muted-foreground mt-4">
                   We respect your privacy. Unsubscribe anytime. No spam, just
-                  beautiful jewelry updates.
+                  beautiful Jewellery updates.
                 </p>
               </form>
             </>
