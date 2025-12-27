@@ -4,16 +4,15 @@
  * @module Services
  */
 
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 // EmailJS Configuration
 const EMAILJS_CONFIG = {
-  serviceId: 'service_sb0y5v1', // Your EmailJS Service ID
-  publicKey: 'xERkS8qnnzyGtqsqu', // Your EmailJS Public Key
+  serviceId: "service_sb0y5v1", // Your EmailJS Service ID
+  publicKey: "xERkS8qnnzyGtqsqu", // Your EmailJS Public Key
   templates: {
-    newsletter: 'template_pgvjny8', // Newsletter thank-you template
-    invisibleChain: 'template_1m9lij7', // Invisible Chain Necklaces
-    notifyMe: 'template_pgvjny8', // Notify Me page (uses same as newsletter) // need to change
+    newsletter: "template_pgvjny8", // Newsletter thank-you template
+    invisibleChain: "template_1m9lij7", // Invisible Chain Necklaces
   },
 };
 
@@ -39,17 +38,17 @@ export const sendNewsletterEmail = async (params: {
       EMAILJS_CONFIG.templates.newsletter,
       {
         to_email: params.to_email,
-        to_name: params.to_name || 'there',
+        to_name: params.to_name || "there",
         product_interest: params.product_interest,
         source: params.source,
-        reply_to: 'santhiyalogesh02@gmail.com',
+        reply_to: "santhiyalogesh02@gmail.com",
       }
     );
 
-    console.log('Newsletter email sent successfully:', response);
+    console.log("Newsletter email sent successfully:", response);
     return { success: true, response };
   } catch (error) {
-    console.error('Failed to send newsletter email:', error);
+    console.error("Failed to send newsletter email:", error);
     return { success: false, error };
   }
 };
@@ -69,47 +68,17 @@ export const sendInvisibleChainEmail = async (params: {
       EMAILJS_CONFIG.templates.invisibleChain,
       {
         to_email: params.to_email,
-        to_name: params.to_name || 'there',
+        to_name: params.to_name || "there",
         product_interest: params.product_interest,
         source: params.source,
-        reply_to: 'santhiyalogesh02@gmail.com',
+        reply_to: "santhiyalogesh02@gmail.com",
       }
     );
 
-    console.log('Invisible Chain email sent successfully:', response);
+    console.log("Invisible Chain email sent successfully:", response);
     return { success: true, response };
   } catch (error) {
-    console.error('Failed to send Invisible Chain email:', error);
-    return { success: false, error };
-  }
-};
-
-/**
- * Send Notify Me page signup email
- */
-export const sendNotifyMeEmail = async (params: {
-  to_email: string;
-  to_name: string;
-  product_interest: string;
-  source: string;
-}) => {
-  try {
-    const response = await emailjs.send(
-      EMAILJS_CONFIG.serviceId,
-      EMAILJS_CONFIG.templates.notifyMe,
-      {
-        to_email: params.to_email,
-        to_name: params.to_name || 'there',
-        product_interest: params.product_interest,
-        source: params.source,
-        reply_to: 'santhiyalogesh02@gmail.com',
-      }
-    );
-
-    console.log('Notify Me email sent successfully:', response);
-    return { success: true, response };
-  } catch (error) {
-    console.error('Failed to send Notify Me email:', error);
+    console.error("Failed to send Invisible Chain email:", error);
     return { success: false, error };
   }
 };
@@ -117,15 +86,9 @@ export const sendNotifyMeEmail = async (params: {
 // Keep old function for backward compatibility
 export const sendThankYouEmail = sendNewsletterEmail;
 
-
-
-
-
-
 export default {
   initEmailJS,
   sendNewsletterEmail,
   sendInvisibleChainEmail,
-  sendNotifyMeEmail,
   sendThankYouEmail, // For backward compatibility
 };
